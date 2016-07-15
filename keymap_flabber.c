@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Layer 0: Default Layer
      * ,---------------------------------------------------------------.
-     * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|Ins|
+     * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|FN0|
      * |---------------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|Del|
      * |---------------------------------------------------------------|
@@ -29,34 +29,34 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |---------------------------------------------------------------|
      * |Shif|   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Up |PgD|
      * |---------------------------------------------------------------|
-     * |FN0 |Alt |Gui |         Space         |Gui |Alt |  |Lef|Dow|Rig|
+     * |Caps|Alt |Gui |         Space         |Gui |Alt |  |Lef|Dow|Rig|
      * `---------------------------------------------------------------'
      */
     [0] = KEYMAP( \
-        ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, INS, \
+        ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, FN0, \
         TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,     DEL, \
         LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,NUHS,ENT,      PGUP,\
         LSFT,NUBS,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,     UP,  PGDN,\
-        FN0, LALT,LGUI,               SPC,           RGUI,RALT,NO,       LEFT,DOWN,RGHT \
+        LCAP,LALT,LGUI,               SPC,           RGUI,RALT,NO,       LEFT,DOWN,RGHT \
     ),
     /* Layer 1: HHKB-style FN-layer plus extras
      * ,---------------------------------------------------------------.
-     * | ` | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|Btl|
+     * | ` | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|   |
      * |---------------------------------------------------------------|
      * |Caps |   |Wak|Slp|   |   |   |   |PSc|SLk|Pau| Up|   |     |FN1|
      * |---------------------------------------------------------------|
-     * |      |Vo-|Vo+|VoM|Ejc|   | * | / |Hom|PgU|Lef|Rgt| Enter  |FN2|
+     * |      |Vo-|Vo+|VoM|Ejc|   | * | / |Hom|PgU|Lef|Rgt| Enter  |Hom|
      * |---------------------------------------------------------------|
-     * |    |   |FN5|FN6|   |   |   | + | - |End|PgD|Dow|      |   |FN3|
+     * |    |   |FN5|FN6|   |   |   | + | - |End|PgD|Dow| Btld |   |End|
      * |---------------------------------------------------------------|
      * |    |    |    |                  |    |    |    |  |   |   |   |
      * `---------------------------------------------------------------'
      */
     [1] = KEYMAP( \
-        GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, BTLD,\
+        GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, TRNS,\
         CAPS,TRNS,WAKE,SLEP,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS,UP,  TRNS,TRNS,     FN1, \
-        TRNS,VOLD,VOLU,MUTE,EJCT,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,TRNS,PENT,     FN2, \
-        TRNS,TRNS,FN5 ,FN6 ,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,TRNS,     TRNS,FN3, \
+        TRNS,VOLD,VOLU,MUTE,EJCT,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,TRNS,PENT,     HOME,\
+        TRNS,TRNS,FN5 ,FN6 ,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,BTLD,     TRNS,END, \
         TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,     TRNS,TRNS,TRNS \
     ),
 };
