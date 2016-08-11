@@ -100,4 +100,4 @@ include $(TMK_DIR)/tool/chibios/common.mk
 include $(TMK_DIR)/tool/chibios/chibios.mk
 
 program: $(BUILDDIR)/$(PROJECT).bin
-	dfu-util -D $(BUILDDIR)/$(PROJECT).bin
+	dfu-util -d 1c11:b007 -D $(BUILDDIR)/$(PROJECT).bin
