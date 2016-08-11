@@ -72,7 +72,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,     TRNS,TRNS,\
         TRNS,TRNS,TRNS,               TRNS,          TRNS,TRNS,TRNS,     TRNS,TRNS,TRNS \
     ),
-    /* Layer 2: SpaceFn/SemicolonFn layer
+    /* Layer 2: SemicolonFn layer
      * ,---------------------------------------------------------------.
      * |  `|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|       |   |
      * |---------------------------------------------------------------|
@@ -92,6 +92,26 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,SPC, END, TRNS,HOME,END, TRNS,TRNS,     TRNS,TRNS,\
         TRNS,TRNS,TRNS,               TRNS,          PSCR,APP, INS,      TRNS,TRNS,TRNS \
     ),
+    /* Layer 3: SpaceFn layer
+     * ,---------------------------------------------------------------.
+     * |  `|F1 |F2 |F3 |F4 |F5 |F6 |F7 |F8 |F9 |F10|F11|F12|       |   |
+     * |---------------------------------------------------------------|
+     * |Caps |   |   |   |   |   |   |PgU| Up|Pgd|   |   |   |     |   |
+     * |---------------------------------------------------------------|
+     * |Del   |   |   |   |   |   |Hom|Lef| Dn|Rgt| ; |   |        |   |
+     * |---------------------------------------------------------------|
+     * |    |   |   |   |   |   |   |Spc|End|Hom|End|   |      |   |   |
+     * |---------------------------------------------------------------|
+     * |    |    |    |                    |PrtS|Menu| Ins |   |   |   |
+     * `---------------------------------------------------------------'
+     */
+    [3] = KEYMAP( \
+        GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, TRNS,TRNS,FN5, \
+        CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,UP,  PGDN,TRNS,TRNS,TRNS,TRNS,     TRNS, \
+        DEL, TRNS,TRNS,TRNS,TRNS,TRNS,HOME,LEFT,DOWN,RGHT,TRNS,TRNS,TRNS,TRNS,     TRNS,\
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,SPC, END, TRNS,HOME,END, TRNS,TRNS,     TRNS,TRNS,\
+        TRNS,TRNS,TRNS,               TRNS,          PSCR,APP, INS,      TRNS,TRNS,TRNS \
+    ),
 };
 
 #define ACTION_LEDS_LOGO 1
@@ -99,7 +119,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 const uint16_t fn_actions[] = {
     // spaceFn
-    [0] = ACTION_LAYER_TAP_KEY(2, KC_SPC),
+    [0] = ACTION_LAYER_TAP_KEY(3, KC_SPC),
     // Hybrid Esc (shift-Esc = ~), & ignore SemicolonFn when shifted (shift-; = :)
     [1] = ACTION_LAYER_MODS(1, MOD_LSFT),
     [2] = ACTION_LAYER_MODS(1, MOD_RSFT),
