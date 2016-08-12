@@ -158,6 +158,9 @@ static THD_FUNCTION(LEDthread, arg) {
   uint8_t save_page, save_breath1, save_breath2;
   msg_t msg, retval;
 
+  // enable led by default
+  is31_write_register(IS31_FUNCTIONREG, IS31_REG_PICTDISP, 1);
+
   while(true) {
     // wait for a message (asynchronous)
     // (messages are queued (up to LED_MAILBOX_NUM_MSGS) if they can't
